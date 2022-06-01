@@ -35,28 +35,16 @@
 				<div class="menu">
 					{{ navbarItem .Path (.T "About") "/about" }}
 					{{ navbarItem .Path (.T "Rules") "/doc/rules" }}
-					{{ navbarItem .Path (.T "Documentation") "/doc" }}
-					{{ navbarItem .Path (.T "Server switcher") "http://dl.ussr.pl/files/osu/ROS.exe" }}
 					{{ navbarItem .Path (.T "Our Team") "/team" }}
 				</div>
 			</div>
-			{{ if .Context.User.Username }}
-			<div class="ui dropdown item">
-				<span>{{ .T "Beatmaps" }}</span>
-				<div class="menu">
-					{{ navbarItem .Path (.T "Request beatmap ranking") "/beatmaps/rank_request" }}
-					{{ navbarItem .Path (.T "Beatmaps Listing") "/beatmaps" }}		
-				</div>
-			</div>
-			{{ end }}
-			{{/* navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" */}}
-			{{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "https://old.ussr.pl" }}{{ end }}
+			{{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "https://admin.dolphinisretarded.xyz" }}{{ end }}
 		{{ end }}
 		<div class="firetrucking-right-menu">
 			<div class="item">
 				<div class="ui search" id="user-search">
 					<div class="ui icon input">
-						<input class="prompt" type="text" placeholder="{{ .T "Looking for someone?" }}" id="user-search-input">
+						<input class="prompt" type="text" placeholder="{{ .T "Who ya looking for now?" }}" id="user-search-input">
 						<i class="search link icon"></i>
 					</div>
 				</div>
