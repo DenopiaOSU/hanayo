@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>{{ if .TitleBar }}{{ .T .TitleBar }} - {{ end }}RealistikOsu!</title>
+		<title>{{ if .TitleBar }}{{ .T .TitleBar }} - {{ end }}Denopia</title>
 
 		<link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
 		<link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
@@ -58,10 +58,10 @@
 
 			<div class="h-container">
 				<div class="ui margined container" id="messages-container">
-				<noscript>Research has proven this website works 10000% better if you have JavaScript enabled.</noscript>
+				<noscript>Research has proven this website works 10000% better if you have JavaScript enabled. Who the fuck doesnt though? - leaked</noscript>
 				{{ if and .Context.User.Username (not (has .Context.User.Privileges 1)) }}
 					<div class="ui warning message">
-						{{ $.T "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Ripple's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='https://support.ripple.moe'>support.ripple.moe</a>." | html }}
+						{{ $.T "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Denopia's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal on our discord or by emailing (not done yet)." | html }}
 					</div>
 				{{ end }}
 				{{ if .Messages }}
@@ -80,12 +80,12 @@
 				{{ end }}
 				{{ with $settings.game_maintenance.Int }}
 					<div class="ui warning message">
-						{{ $.T "RealistikOsu!'s score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
+						{{ $.T "Denopia's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
 					</div>
 				{{ end }}
 				{{ with $settings.website_maintenance.Int }}
 					<div class="ui warning message">
-						{{ $.T "The RealistikOsu! website is currently in maintenance mode. Only certain users are allowed to access the full website." }}
+						{{ $.T "The Denopia website is currently in maintenance mode. Only certain users are allowed to access the full website." }}
 					</div>
 				{{ end }}
 				</div>
@@ -103,8 +103,7 @@
 								<a class="footer-title">Help</a> 
 								<ul style="list-style-type: none; padding: 0; margin: 0;">
 									<li>
-										<i><a href="https://dl.ussr.pl/files/osu/ROS.exe">Server Switcher</a></i>
-										<i><a href="https://ussr.pl/doc">Documentation</a></i>
+										<i><a href="https://denopia.ml/doc">Documentation</a></i>
 									</li>
 								</ul>
 							</div> 
@@ -114,7 +113,7 @@
 								<a class="footer-title">Social</a>
 								<ul style="list-style-type: none; padding: 0; margin: 0;">
 									<li>
-										<i><a href="https://discord.gg/87E2K46" target="_blank">Discord</a></i>
+										<i><a href="https://discord.gg/tukB8TZ42V" target="_blank">Discord</a></i>
 									</li>
 								</ul>
 							</div>
@@ -124,13 +123,13 @@
 								<a class="footer-title">Source Code</a>
 								<ul style="list-style-type: none; padding: 0; margin: 0;">
 									<li>
-										<i><a href="https://github.com/RealistikOsu" target="_blank">GitHub</a></i>
+										<i><a href="https://github.com/denopiaOSU" target="_blank">GitHub</a></i>
 									</li>
 								</ul>
 							</div>
 						</div>
 						<div class="footer-logo">
-							<span style="color: white; font-size: 30px;">RealistikOsu!</span> 
+							<span style="color: white; font-size: 30px;">Denopia</span> 
 							<br>
 							<a class="subtitle" style="font-size: 15px; color: white;">osu! private server</a>
 						</div>
