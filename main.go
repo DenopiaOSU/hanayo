@@ -284,7 +284,7 @@ func generateEngine() *gin.Engine {
 	r.GET("/c/:cid", clanPage)
 	r.GET("/b/:bid", beatmapInfo)
 	// fix osu stuff :cry:
-	r.GET("//beatmap/:bid", beatmapInfo)
+	r.GET("//beatmaps/:bid", beatmapInfo)
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)
