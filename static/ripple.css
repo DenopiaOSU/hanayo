@@ -416,9 +416,15 @@ a.inherit:hover {
 
 .white.background {
     background-image: url("image/navbar.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
 }
 body.ds .white.background {
     background-image: url("image/navbar.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
 }
 
 .user.avatar {
