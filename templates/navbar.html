@@ -6,9 +6,6 @@
 {{ $ds      := band .ClientFlags 1 }}
 <div class="ui secondary fixed-height stackable white background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}" id="navbar">
 	<div class="ui container">
-		<div class="item">
-			<b><a href="/" title="{{ .T "Home page" }}"><img class="ripple logo" src="/static/logos/text-{{ if $ds }}white{{ else }}black{{ end }}.png" alt="RealistikOsu!"></a></b>
-		</div>
 		{{ if $isRAP }}
 			{{/*
 			Note:
@@ -17,6 +14,7 @@
 				the current RAP's sidebar.
 			*/}}
 		{{ else }}
+			{{ navbarItem .Path (.T "Home") "/" }}
 			{{ navbarItem .Path (.T "Leaderboard") "/leaderboard" }}
 			<div class="ui dropdown item">
 				<span>{{ .T "Clans" }}</span>
@@ -62,8 +60,13 @@
 					</div>
 				</div>
 			{{ else }}
-				{{ navbarItem .Path (.T "Log in") "/login" }}
-				{{ navbarItem .Path (.T "Register") "/register" }}
+			<div class="ui dropdown item">
+					<span><p>Not logged in..</p></span>
+					<div class="menu">
+						{{ navbarItem .Path (.T "Log in") "/login" }}
+						{{ navbarItem .Path (.T "Register") "/register" }}
+					</div>
+			</div>
 			{{ end }}
 		</div>
 	</div>
