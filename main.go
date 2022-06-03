@@ -16,7 +16,7 @@ import (
 	"github.com/RealistikOsu/hanayo/services"
 	"github.com/RealistikOsu/hanayo/services/cieca"
 	"github.com/fatih/structs"
-	"github.com/getsentry/raven-go"
+	"github.com/getsentry/sentry-go"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
@@ -247,7 +247,9 @@ func generateEngine() *gin.Engine {
 
 	// sentry
 	if config.SentryDSN != "" {
-		ravenClient, err := raven.New(config.SentryDSN)
+		ravenClient, err := sentry.Init(sentry.ClientOptions{
+			Dsn: config.SentryDSN,
+		})
 		if err != nil {
 			fmt.Println(err)
 		} else {
@@ -283,6 +285,7 @@ func generateEngine() *gin.Engine {
 	r.GET("/ap/u/:user", autoProfile)
 	r.GET("/c/:cid", clanPage)
 	r.GET("/b/:bid", beatmapInfo)
+
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)
