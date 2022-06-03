@@ -281,16 +281,6 @@ margin-bottom: 5px;
     background-position-x: -30px;
     color: #fff
 }
-.woman {
-    background-image: url("image/woman.png");
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 900px;
-    transform: translate(-20px, 0px);
-    background-size: 300px;
-    -webkit-mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%);
-    mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 20%); /*For compatibillity*/
-}
 
 .content {
     display: flex;
