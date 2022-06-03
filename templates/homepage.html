@@ -141,7 +141,7 @@ KyutGrill=homepage2.jpg
 							{{ $rx := (qb "SELECT ROUND(pp) AS pp, users.username, users.id FROM scores_relax INNER JOIN users ON scores_relax.userid = users.id WHERE scores_relax.play_mode = 0 AND completed = 3 AND users.privileges > 2 ORDER BY pp DESC LIMIT 1") }}
 							<p class="status-head">{{ $rx.pp }}pp</p>
 							<p class="status-head" style="font-size: 10px!important;">{{ .T "Done by " }}<a href="/u/{{ $rx.id }}">{{ $rx.username }}</a></p>
-							<p class="status-footer">{{ .T "Top Relax Score" }}</p>
+							<p class="status-footer">{{ .T "Top RX Score" }}</p>
 						</div>
 					</div>
 				</div>
@@ -156,7 +156,7 @@ KyutGrill=homepage2.jpg
 							{{ $ap := (qb "SELECT ROUND(pp) AS pp, users.username, users.id FROM scores_ap INNER JOIN users ON scores_ap.userid = users.id WHERE scores_ap.play_mode = 0 AND completed = 3 AND users.privileges > 2 ORDER BY pp DESC LIMIT 1") }}
 							<p class="status-head">{{ $ap.pp }}pp</p>
 							<p class="status-head" style="font-size: 10px!important;">{{ .T "Done by " }}<a href="/u/{{ $ap.id }}">{{ $ap.username }}</a></p>
-							<p class="status-footer">{{ .T "Top Autopilot Score" }}</p>
+							<p class="status-footer">{{ .T "Top AP Score" }}</p>
 						</div>
 					</div>
 				</div>
