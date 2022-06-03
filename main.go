@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/RealistikOsu/hanayo/modules/btcaddress"
 	"github.com/RealistikOsu/hanayo/modules/btcconversions"
 	"github.com/RealistikOsu/hanayo/routers/oauth"
 	"github.com/RealistikOsu/hanayo/routers/pagemappings"
@@ -176,11 +175,6 @@ func main() {
 	// initialise oauth
 	setUpOauth()
 
-	// initialise btcaddress
-	btcaddress.Redis = rd
-	btcaddress.APIKey = config.CoinbaseAPIKey
-	btcaddress.APISecret = config.CoinbaseAPISecret
-
 	// initialise schiavo
 	schiavo.Prefix = "hanayo"
 	schiavo.Bunker.Send(fmt.Sprintf("STARTUATO, mode: %s", gin.Mode()))
@@ -289,6 +283,8 @@ func generateEngine() *gin.Engine {
 	r.GET("/ap/u/:user", autoProfile)
 	r.GET("/c/:cid", clanPage)
 	r.GET("/b/:bid", beatmapInfo)
+	// fix osu stuff :cry:
+	r.GET("//beatmap/:bid", beatmapInfo)
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)
