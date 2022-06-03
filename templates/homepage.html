@@ -52,7 +52,7 @@ KyutGrill=homepage2.jpg
 				</span>
 				<div class="buttons">
 					{{ if not .Context.User.ID }}
-						<a href="/register" class="home-btn btn-key" >Register</a>
+						<a href="/register" class="home-btn btn-key" >Sign Up!</a>
 					{{end}}
 				</div>
 			</div>
@@ -71,7 +71,7 @@ KyutGrill=homepage2.jpg
 							</div>
 							<div class="twelve wide column">
 								<p class="status-head">{{ rediget "ripple:online_users" }} / {{ .T "%s" (rediget "ripple:registered_users")}}</p>
-								<p class="status-footer">{{ .T "Online / Registered" }}</p>
+								<p class="status-footer">{{ .T "Online / Signed Up" }}</p>
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@ KyutGrill=homepage2.jpg
 							</p>
 							{{ end }}
 							{{ end }}
-							<p class="status-footer">{{ .T "Latest Player" }}</p>
+							<p class="status-footer">{{ .T "Latest User" }}</p>
 						</div>
 					</div>
 			  </div>
