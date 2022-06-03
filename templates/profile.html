@@ -210,36 +210,36 @@ starteffect()
 				{{ $member := (has .privileges 3) }}
 					
 					{{ if $owner }}
-					{{ $global.T "RealistikOsu! %s" "Owner" }}
+					{{ $global.T "Denopia %s" "Owner" }}
 					{{ else }}
 					{{ if $cm }}
-					{{ $global.T "RealistikOsu! %s" "Community Manager" }}
+					{{ $global.T "Denopia %s" "Community Manager" }}
 					{{ else }}
 					{{ if $admin }}
-					{{ $global.T "RealistikOsu! %s" "Admin" }}
+					{{ $global.T "Denopia %s" "Admin" }}
 					{{ else }}
 					{{ if $dev }}
-					{{ $global.T "RealistikOsu! %s" "Developer" }}
+					{{ $global.T "Denopia %s" "Developer" }}
 					{{ else }}
 					{{ if $bat }}
-					{{ $global.T "RealistikOsu! %s" "BAT" }}
+					{{ $global.T "Denopia %s" "BAT" }}
 					{{ else }}
 					{{ if $member }}
-					{{ $global.T "RealistikOsu! %s" "Player" }}
+					{{ $global.T "Denopia %s" "Player" }}
 					{{ else }}
 					{{end}}{{end}}{{end}}{{end}}{{end}}{{end}}
 
 							{{ $global.T "from <b>%s</b>." (country .country true) | html }}
-							<br>{{ $global.T "They signed up on RealistikOsu! %s." (time $user.registered_on) | html }}
+							<br>{{ $global.T "They signed up on Denopia %s." (time $user.registered_on) | html }}
 							<br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
 							<br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
 						</div>
-							<meta name="og:image" content="https://a.ussr.pl/{{$user.id}}"/>
+							<meta name="og:image" content="https://a.dolphinisretarded.xyz/{{$user.id}}"/>
  							<meta property="og:type" content="website" />
-							<meta property="og:url" content="https://ussr.pl/u/{{$user.id}}" />
+							<meta property="og:url" content="https://u.dolphinisretarded.xyz/u/{{$user.id}}" />
 							<meta property="og:title" content={{ $global.T "<b>%s</b>" .username}} />
-							<meta property="og:description" content={{ $global.T "<b>%s</b> is a RealistikOsu! player from <b>%s</b>." .username (country .country true)}} />
-							<meta property="og:image" content="https://ussr.pl/{{$user.id}}" />
+							<meta property="og:description" content={{ $global.T "<b>%s</b> is a Denopia player from <b>%s</b>." .username (country .country true)}} />
+							<meta property="og:image" content="https://dolphinisretarded.xyz/{{$user.id}}" />
 							
 						<div class="column">
 							{{ if and (not .badges) (not .custom_badge) }}
