@@ -11,6 +11,13 @@ KyutGrill=team2.jpg
 			<h3>{{ .T "This is a list of the outstanding individuals who keep Denopia the server and its community operating." }}</h3>
 		</div>
 		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Owner" }}</h1>
+			<p>
+				{{ .T "Owners are responsible for managing staff members and pretty much everything else." }}
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 1008) }}
+		</div>
+		<div class="ui center aligned segment">
 			<h1 class="ui heading">{{ .T "Developer Team" }}</h1>
 			<p>
 				{{ .T "Developers are responsible for all the server side magic. They do all the behind the scene technical things." }}<br>
