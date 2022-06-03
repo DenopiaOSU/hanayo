@@ -284,7 +284,9 @@ func generateEngine() *gin.Engine {
 	r.GET("/c/:cid", clanPage)
 	r.GET("/b/:bid", beatmapInfo)
 	// fix osu stuff :cry:
-	r.GET("//beatmaps/:bid", beatmapInfo)
+	r.GET("//beatmaps/:bid", func(c *gin.Context) {
+		c.Redirect(301, "https://dolphinisretarded.xyz/b/:bid")
+	})
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)
