@@ -14,8 +14,8 @@ KyutGrill=team2.jpg
 			<h1 class="ui heading">{{ .T "Developer Team" }}</h1>
 			<p>
 				{{ .T "<b> Owner </b> <a href="https://dolphinisretarded.xyz/u/1003?mode=0">Dexitry</a>" }}<br>
-				.T "<b> CoOwner - Dev </b><a href="https://dolphinisretarded.xyz/u/1000?mode=0">narashini</a>" }}<br>
-				.T "<b> Dev - Staff </b><a href="https://dolphinisretarded.xyz/u/1001?mode=0">koenji</a>" }}<br>
+				{{ .T "<b> CoOwner - Dev </b><a href="https://dolphinisretarded.xyz/u/1000?mode=0">narashini</a>" }}<br>
+				{{ .T "<b> Dev - Staff </b><a href="https://dolphinisretarded.xyz/u/1001?mode=0">koenji</a>" }}<br>
 			</p>
 			{{ template "userGroup" (.Get "badges/members?id=%d" 2) }}
 		</div>
