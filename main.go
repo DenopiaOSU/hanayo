@@ -10,6 +10,12 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/RealistikOsu/hanayo/modules/btcaddress"
+	"github.com/RealistikOsu/hanayo/modules/btcconversions"
+	"github.com/RealistikOsu/hanayo/routers/oauth"
+	"github.com/RealistikOsu/hanayo/routers/pagemappings"
+	"github.com/RealistikOsu/hanayo/services"
+	"github.com/RealistikOsu/hanayo/services/cieca"
 	"github.com/fatih/structs"
 	"github.com/getsentry/raven-go"
 	"github.com/gin-gonic/contrib/sessions"
@@ -22,13 +28,7 @@ import (
 	"gopkg.in/mailgun/mailgun-go.v1"
 	"gopkg.in/redis.v5"
 	"zxq.co/ripple/agplwarning"
-	"github.com/RealistikOsu/hanayo/modules/btcaddress"
-	"github.com/RealistikOsu/hanayo/modules/btcconversions"
-	"github.com/RealistikOsu/hanayo/routers/oauth"
-	"github.com/RealistikOsu/hanayo/routers/pagemappings"
-	"github.com/RealistikOsu/hanayo/services"
-	"github.com/RealistikOsu/hanayo/services/cieca"
-	"zxq.co/ripple/schiavolib"
+	schiavo "zxq.co/ripple/schiavolib"
 	"zxq.co/x/rs"
 )
 
@@ -170,6 +170,7 @@ func main() {
 	rd = redis.NewClient(&redis.Options{
 		Addr:     config.RedisAddress,
 		Password: config.RedisPassword,
+		DB:       1,
 	})
 
 	// initialise oauth
@@ -235,20 +236,16 @@ func httpLoop() {
 func generateEngine() *gin.Engine {
 	fmt.Println("Starting session system...")
 	var store sessions.Store
-	if config.RedisMaxConnections != 0 {
-		var err error
-		store, err = sessions.NewRedisStore(
-			config.RedisMaxConnections,
-			config.RedisNetwork,
-			config.RedisAddress,
-			config.RedisPassword,
-			[]byte(config.CookieSecret),
-		)
-		if err != nil {
-			fmt.Println(err)
-			store = sessions.NewCookieStore([]byte(config.CookieSecret))
-		}
-	} else {
+	var err error
+	store, err = sessions.NewRedisStore(
+		config.RedisMaxConnections,
+		config.RedisNetwork,
+		config.RedisAddress,
+		config.RedisPassword,
+		[]byte(config.CookieSecret),
+	)
+	if err != nil {
+		fmt.Println(err)
 		store = sessions.NewCookieStore([]byte(config.CookieSecret))
 	}
 
@@ -283,7 +280,7 @@ func generateEngine() *gin.Engine {
 	r.POST("/register", registerSubmit)
 	r.GET("/register/verify", verifyAccount)
 	r.GET("/register/welcome", welcome)
-	
+
 	r.GET("/clans/create", ccreate)
 	r.POST("/clans/create", ccreateSubmit)
 
@@ -315,7 +312,7 @@ func generateEngine() *gin.Engine {
 	r.POST("/settings/2fa/totp", totpSetup)
 	r.GET("/settings/discord/finish", discordFinish)
 	r.POST("/settings/profbackground/:type", profBackground)
-	
+
 	r.POST("/settings/clansettings", createInvite)
 	r.POST("settings/clansettings/k", clanKick)
 	r.GET("/clans/invite/:inv", clanInvite)
