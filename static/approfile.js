@@ -407,7 +407,7 @@ function loadScoresPage(type, mode) {
 	});
 }
 function downloadStar(id) {
-	return "<a href='/web/replays_auto/" + id + "' class='new downloadstar'><i class='star icon'></i>" + T("Download") + "</a>";
+	return "<a href='/web/replays/" + id + "' class='new downloadstar'><i class='star icon'></i>" + T("Download") + "</a>";
 }
 function weightedPP(type, page, idx, pp) {
 	if (type != "best" || pp == 0)
