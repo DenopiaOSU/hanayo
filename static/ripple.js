@@ -538,7 +538,7 @@ function _api(base, endpoint, data, success, failure, post, handleAllFailures) {
   handleAllFailures = (typeof handleAllFailures !== undefined) ? handleAllFailures : false;
 
   var errorMessage =
-      "An error occurred while contacting the RealistikOsu! API. Please report this to a RealistikOsu! developer.";
+      "An error occurred while contacting the Denopia API. Please report this to a Denopia developer.";
 
   $.ajax({
     method : (post ? "POST" : "GET"),

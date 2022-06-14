@@ -81,9 +81,8 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/getsentry/raven-go"
+  name = "github.com/getsentry/sentry-go"
   packages = ["."]
-  revision = "563b81fc02b75d664e54da31f787c2cc2186780b"
 
 [[projects]]
   branch = "master"

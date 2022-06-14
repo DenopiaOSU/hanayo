@@ -1,6 +1,6 @@
 {{/*###
 Handler=/donate
-TitleBar=Support RealistikOsu!
+TitleBar=Support Denopia
 KyutGrill=donate2.png
 AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.js
 */}}
@@ -116,7 +116,7 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
 								<input type="hidden" name="option_select{{ . }}" value="{{ $months }} month{{ if . }}s{{ end }}">
 								<input type="hidden" name="option_amount{{ . }}" value="{{ calculateDonorPrice $months }}">
 							{{ end }}
-							<input type="hidden" name="on1" value="RealistikOsu! user to give donor">
+							<input type="hidden" name="on1" value="Denopia user to give donor">
 							<input type="hidden" name="custom" value="username={{ $global.User.Username }}" id="ipn-username">
 							<input type="hidden" name="amount" value="{{ calculateDonorPrice 1 }}" id="paypal-amt">
 							<div class="ui fluid labeled action input">
@@ -128,7 +128,7 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
 							</div>
 							{{ $ief }}
 							<input type="hidden"
-							name="business" value="realistikosu@gmail.com">
+							name="business" value="denopiashoppy@gmail.com">
 							<input type="hidden" name="cmd" value="_xclick">
 							<input type="hidden" name="lc" value="GB">
 							<input type="hidden" name="no_note" value="0">

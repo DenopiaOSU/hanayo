@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/RealistikOsu/hanayo/modules/btcaddress"
 	"github.com/RealistikOsu/hanayo/modules/btcconversions"
 	"github.com/RealistikOsu/hanayo/routers/oauth"
 	"github.com/RealistikOsu/hanayo/routers/pagemappings"
@@ -175,11 +174,6 @@ func main() {
 
 	// initialise oauth
 	setUpOauth()
-
-	// initialise btcaddress
-	btcaddress.Redis = rd
-	btcaddress.APIKey = config.CoinbaseAPIKey
-	btcaddress.APISecret = config.CoinbaseAPISecret
 
 	// initialise schiavo
 	schiavo.Prefix = "hanayo"
