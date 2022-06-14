@@ -379,6 +379,10 @@ a.inherit:hover {
     color: white;
 }
 
+.footer-logo {
+    padding: 40px;
+}
+
 .top.right.icon {
 	cursor: pointer;
 	position: absolute;
